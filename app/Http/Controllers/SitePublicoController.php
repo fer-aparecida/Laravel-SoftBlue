@@ -7,14 +7,19 @@ use Illuminate\Http\Request;
 class SitePublicoController extends Controller
 {
     public function paginaPrincipal(){
-        return view('ViewPrincipal');
+        $usuario = "André";
+        return view('ViewPrincipal')->with('usuario',$usuario);
     }
     
-    public function produtos(){
-        return view('ViewProdutos');
+    public function produtos(){        
+        $produtos = array("TV", "Celular", "Computador", "Fogão");        
+        return view('ViewProdutos')->with('produtos',$produtos);
     }
     public function informacoes(){
-        return view('ViewInformacoes');
+        $usuario = "André";
+        $produtos = array("TV", "Celular", "Computador", "Fogão");
+        return view('ViewInformacoes', compact('usuario', 'produtos'));
+        //return view('ViewInformacoes', ['usuario' => $usuario, 'produtos' => $produtos]);
     }
     
 }

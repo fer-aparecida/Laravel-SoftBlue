@@ -18,4 +18,6 @@
 Route::get('/','SitePublicoController@paginaPrincipal'); //Controller@função a ser iniciada
 Route::get('/vitrine','SitePublicoController@produtos');
 Route::get('/info','SitePublicoController@informacoes');
-        
+Route::get('/parametros','ParametrosControl@acessandoParametrosViaRequest');
+Route::get('/formulario','ParametrosControl@formularioExibir');
+Route::get('/formularioReceber','ParametrosControl@formularioReceber');
